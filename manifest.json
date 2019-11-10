@@ -1,0 +1,21 @@
+{
+    "name": "App Klasemen Liga Jerman",
+    "short_name": "Standing Jerman",
+    "description": "Aplikasi untuk melihat klasemen sepak bola liga Jerman",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#293a80",
+    "theme_color": "#010038",
+    "icons": [{
+            "src": "/img/logo-128.png",
+            "sizes": "128x128",
+            "type": "image/png"
+        },
+        {
+            "src": "/img/logo-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "gcm_sender_id": "554783483766"
+}

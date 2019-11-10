@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>App Klasemen Liga Jerman</title>
+    <meta name="description" content="My first PWA" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#010038" />
+    <link href="css/material-icons.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="css/materialize.min.css" />
+    <link rel="manifest" href="/manifest.json" />
+</head>
+
+<body>
+    <!-- Membuat navbar sticky ketika scrolling -->
+    <div class="navbar-fixed">
+        <!-- Navigasi -->
+        <nav class="light-blue lighten-1" role="navigation">
+            <div class="nav-wrapper container">
+                <a class="hide-on-small-only" href="#" class="brand-logo" id="logo-container">Detail Team</a>
+                <a href="./#home" class="sidenav-trigger" data-target="nav-mobile">
+                    <i class="material-icons">arrow_back</i>
+                </a>
+                <ul class="topnav right hide-on-med-and-down"></ul>
+                <ul class="sidenav" id="nav-mobile"></ul>
+            </div>
+        </nav>
+        <!-- Akhir Navigasi -->
+    </div>
+
+    <div class="row">
+        <div class="col s12 m12">
+            <div class="card">
+                <div class="center-align" id="preloader">
+                    <div class="preloader-wrapper big active">
+                        <div class="spinner-layer spinner-blue">
+                            <div class="circle-clipper left">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="gap-patch">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="circle-clipper right">
+                                <div class="circle"></div>
+                            </div>
+                        </div>
+
+                        <div class="spinner-layer spinner-red">
+                            <div class="circle-clipper left">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="gap-patch">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="circle-clipper right">
+                                <div class="circle"></div>
+                            </div>
+                        </div>
+
+                        <div class="spinner-layer spinner-yellow">
+                            <div class="circle-clipper left">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="gap-patch">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="circle-clipper right">
+                                <div class="circle"></div>
+                            </div>
+                        </div>
+
+                        <div class="spinner-layer spinner-green">
+                            <div class="circle-clipper left">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="gap-patch">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="circle-clipper right">
+                                <div class="circle"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="fabFav" class="fixed-action-btn">
+                    <a class="btn-floating btn-large light-blue">
+                        <i id="favoriteIcon" class="large material-icons">favorite_border</i>
+                    </a>
+                </div>
+                <div class="card-content">
+                    <div class="col s12 center-align">
+                        <img id="logoKlub" width="150" height="150" vspace="10">
+                        <p id="namaKlub" style="font-weight:bold; font-size: 20px;"></p>
+                        <hr size="12px">
+                    </div>
+                </div>
+                <!-- membuat tabs di dalam card -->
+                <div class="card-tabs">
+                    <ul class="tabs tabs-fixed-width">
+                        <li class="tab"><a class="active" href="#detail">Detail</a></li>
+                        <li class="tab"><a href="#pemain">Pemain</a></li>
+                        <li class="tab"><a href="#kompetisi">Kompetisi</a></li>
+                    </ul>
+                    <div class="card-content ">
+                        <div id="detail">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td><b>Name</b></td>
+                                        <td id="name"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Short Name</b></td>
+                                        <td id="shortName"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Tla</b></td>
+                                        <td id="tla"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Address</b></td>
+                                        <td id="address"> </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Phone</b></td>
+                                        <td id="phone"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Website</b></td>
+                                        <td id="website"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Email</b></td>
+                                        <td id="email"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Founded</b></td>
+                                        <td id="founded"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Club Colors</b></td>
+                                        <td id="clubColors"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Venue</b></td>
+                                        <td id="venue"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Area</b></td>
+                                        <td id="area"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Last Update</b></td>
+                                        <td id="lastUpdate"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="pemain">
+                        </div>
+                        <div id="kompetisi">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="body-content"></div>
+    <script type="text/javascript" src="https://unpkg.com/snarkdown@1.0.2/dist/snarkdown.umd.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/api.js"></script>
+    <script type="text/javascript" src="js/idb.js"></script>
+    <script type="text/javascript" src="js/indexeddb.js"></script>
+    <script type="text/javascript" src="js/dateUtil.js"></script>
+    <script>
+        // REGISTER SERVICE WORKER
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", function() {
+                navigator.serviceWorker
+                    .register("/sw.js")
+                    .then(function() {
+                        console.log("Pendaftaran ServiceWorker berhasil");
+                    })
+                    .catch(function() {
+                        console.log("Pendaftaran ServiceWorker gagal");
+                    });
+            });
+        } else {
+            console.log("ServiceWorker belum didukung browser ini.");
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            var urlParams = new URLSearchParams(window.location.search);
+            var id = Number(urlParams.get("id"));
+            var isFavorit = false
+            getDataById(id).then((tim) => {
+                document.getElementById("favoriteIcon").innerHTML = "favorite"
+                detailTeamHTML(tim)
+                isFavorit = true
+            }).catch((msg) => {
+                document.getElementById("favoriteIcon").innerHTML = "favorite_border"
+                getTeamById();
+                isFavorit = false
+            })
+            var favoriteIcon = document.getElementById("favoriteIcon");
+
+            favoriteIcon.onclick = function() {
+                if (isFavorit) {
+                    deleteFavorite("favorite_team", id);
+                    isFavorit = false
+                } else {
+                    item = getTeamById();
+                    item.then(function(tim) {
+                        createFavorite(tim);
+                    });
+                    isFavorit = true
+                }
+            };
+        });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('ul.tabs').tabs({
+                swipeable: false
+            });
+            $('ul.tabs').tabs('select', 'tab_id');
+        });
+    </script>
+
+</body>
+
+</html>
